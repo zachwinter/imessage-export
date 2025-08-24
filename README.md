@@ -2,7 +2,7 @@
 
 A comprehensive tool for extracting messages and attachments from the macOS Messages app database, creating organized backups with both JSON data and HTML conversation views.
 
-## 🌟 Features
+## Features
 
 - **Complete Message Export**: Extracts all text messages between you and a specific contact
 - **Attachment Handling**: Automatically copies and organizes image attachments
@@ -11,7 +11,7 @@ A comprehensive tool for extracting messages and attachments from the macOS Mess
 - **Organized Storage**: Creates timestamped directories to keep exports organized
 - **Privacy Focused**: Everything stays local - no data is uploaded or shared
 
-## 📋 Requirements
+## Requirements
 
 - macOS with Messages app
 - Messages database access (requires copying the database file)
@@ -46,7 +46,7 @@ chmod +x messages.sh
 
 That's it! The script will handle dependency installation automatically.
 
-## 📖 Detailed Setup
+## Detailed Setup
 
 ### Manual Dependency Installation (Optional)
 
@@ -92,7 +92,7 @@ Each message object contains:
 ```json
 {
   "timestamp": "2024-01-15 10:30:45",
-  "sender": "+1234567890", 
+  "sender": "+1234567890",
   "message": "Hello there!",
   "attachment_filename": "~/Library/Messages/Attachments/ab/12/photo.jpg",
   "attachment_local_path": "attachments/photo.jpg",
@@ -112,49 +112,49 @@ The HTML file provides:
 - **Date Organization**: Messages grouped by date
 - **Responsive Design**: Works on desktop and mobile browsers
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Database Issues
 
-| Problem | Solution |
-|---------|----------|
+| Problem                       | Solution                                         |
+| ----------------------------- | ------------------------------------------------ |
 | "Messages database not found" | Copy database: `cp ~/Library/Messages/chat.db .` |
-| "Cannot read database" | Quit Messages app before copying |
-| Database file missing | Check file exists: `ls -la chat.db` |
+| "Cannot read database"        | Quit Messages app before copying                 |
+| Database file missing         | Check file exists: `ls -la chat.db`              |
 
-### Message Extraction Issues  
+### Message Extraction Issues
 
-| Problem | Solution |
-|---------|----------|
-| "No messages found" | Verify phone number format matches Messages |
-| Empty results | Try without `+` prefix: `1234567890` |
-| Wrong contact | Check you have a conversation with that number |
+| Problem             | Solution                                       |
+| ------------------- | ---------------------------------------------- |
+| "No messages found" | Verify phone number format matches Messages    |
+| Empty results       | Try without `+` prefix: `1234567890`           |
+| Wrong contact       | Check you have a conversation with that number |
 
 ### Installation Issues
 
-| Problem | Solution |
-|---------|----------|
+| Problem                     | Solution                                          |
+| --------------------------- | ------------------------------------------------- |
 | Homebrew installation fails | Install manually from [brew.sh](https://brew.sh/) |
-| Tool installation fails | Run `brew install sqlite jq` separately |
-| Permission errors | Check Terminal has full disk access |
+| Tool installation fails     | Run `brew install sqlite jq` separately           |
+| Permission errors           | Check Terminal has full disk access               |
 
 ### Storage Issues
 
-| Problem | Solution |
-|---------|----------|
-| "No space left" | Database can be 3-10GB+ depending on history |
-| Slow copying | Use external drive for large databases |
+| Problem         | Solution                                                |
+| --------------- | ------------------------------------------------------- |
+| "No space left" | Database can be 3-10GB+ depending on history            |
+| Slow copying    | Use external drive for large databases                  |
 | Temporary files | `chat.db-shm` and `chat.db-wal` are normal SQLite files |
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
 - **100% Local**: All processing happens on your machine
-- **No Network**: No data is transmitted to external servers  
+- **No Network**: No data is transmitted to external servers
 - **No Logging**: Script doesn't create logs of your messages
 - **No Persistence**: Temporary files are cleaned up automatically
 - **Source Available**: Full script source code is readable and auditable
 
-## 📊 Understanding the Database
+## Understanding the Database
 
 The Messages database contains:
 
@@ -166,7 +166,7 @@ The Messages database contains:
 
 The script uses SQL queries to extract and correlate this data into a readable format.
 
-## 🗂️ File Management
+## File Management
 
 ### Created Files
 
@@ -181,7 +181,7 @@ The script uses SQL queries to extract and correlate this data into a readable f
 
 > These `.shm` and `.wal` files are temporary SQLite working files and can be safely deleted after the script completes.
 
-## 🤝 Contributing
+## Contributing
 
 Found a bug or want to suggest improvements? Feel free to:
 
@@ -190,6 +190,6 @@ Found a bug or want to suggest improvements? Feel free to:
 - Recommend UI improvements for the HTML output
 - Share compatibility updates for new macOS versions
 
-## 📄 License
+## License
 
 This script is provided as-is for personal use. Please respect privacy laws and only export your own message data.
