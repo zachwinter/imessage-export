@@ -18,7 +18,7 @@ A comprehensive tool for extracting messages and attachments from the macOS Mess
 - Terminal/command line access
 - Internet connection (for automatic dependency installation)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Copy the Messages Database
 
